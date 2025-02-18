@@ -1,17 +1,18 @@
 ---
-title: Обговорення
+title: Discussion
 ---
 
-## Поширені запитання
+## Frequently Asked Questions
 
 People often have questions about Git beyond the scope of the core material.
-Студентам, які завершили решту уроків, може бути корисно розглянути наступні теми.
+Students who have completed the rest of the lessons might find value in looking through the following topics.
 
-Зауважте, що оскільки цей матеріал не є обов'язковим для базового використання Git, він не буде розглянутий інструктором.
+Note that since this material isn't essential for basic Git usage, it won't be covered by the instructor.
 
-## Додаткові налаштування Git
+## More Advanced Git Configuration
 
-Під час [Налаштування Git](../episodes/02-setup.md), ми використовували `git config --global`, щоб встановити деякі параметри за замовчуванням для Git.
+In [Setting Up Git](../episodes/02-setup.md),
+we used `git config --global` to set some default options for Git.
 It turns out that these configuration options get stored in your home directory
 in a plain text file called `.gitconfig`.
 
@@ -34,17 +35,17 @@ This file can be opened in your preferred text editor.
 as this helps avoid introducing syntax errors.)
 
 Eventually, you will want to start customizing Git's behaviour.
-Це можна зробити, додавши більше записів до вашого `.gitconfig`.
+This can be done by adding more entries to your `.gitconfig`.
 The available options are described in the manual:
 
 ```bash
 $ git config --help
 ```
 
-Зокрема, вам може знадобитися додати псевдоніми.
-Це щось на кшталт скорочень для довших команд Git.
-Наприклад, якщо вам набридло постійно вводити `git checkout`,
-ви можете виконати команду:
+In particular, you might find it useful to add aliases.
+These are like shortcuts for longer Git commands.
+For example, if you get sick of typing `git checkout` all the time,
+you could run the command:
 
 ```bash
 $ git config --global alias.co checkout
@@ -62,7 +63,7 @@ we could now instead type:
 $ git co f22b25e mars.txt
 ```
 
-## Стилізація журналу Git
+## Styling Git's Log
 
 A good target for customization is output from the log.
 The default log is quite verbose but gives no graphical hints
@@ -91,22 +92,23 @@ $ git config --global --unset format.pretty
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
-## Скасування змін конфігурації Git
+## Undoing Git Configuration Changes
 
-Ви можете використовувати опцію `--unset` для видалення небажаних параметрів з `.gitconfig`.
+You can use the `--unset` flag to delete unwanted options from `.gitconfig`.
 Another way to roll back changes is to store your `.gitconfig` using Git.
 
 For hints on what you might want to configure,
 go to GitHub and search for "gitconfig".
-Ви знайдете сотні репозиторіїв, у яких люди зберегли
-свої власні файли конфігурації Git.
+You will find hundreds of repositories in which people have stored
+their own Git configuration files.
 Sort them by the number of stars and have a look at the top few.
 If you find some you like,
 please check that they're covered by an open source license before you clone them.
 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Нетекстові файли
+## Non-text Files
 
 Recall when we discussed [Conflicts](../episodes/09-conflict.md)
 there was a challenge that asked,
@@ -118,7 +120,7 @@ We will now revisit this in more detail.
 
 Many people want to version control non-text files, such as images, PDFs and Microsoft Office or LibreOffice documents.
 It is true that Git can handle these filetypes (which fall under the banner of "binary" file types).
-However, just because it _can_ be done doesn't mean it _should_ be done.
+However, just because it *can* be done doesn't mean it *should* be done.
 
 Much of Git's magic comes from being able to do line-by-line comparisons ("diffs") between files.
 This is generally easy for programming source code and marked up text.
@@ -193,7 +195,7 @@ You can see exactly which lines changed and what the changes were.
 An uninformative `git diff` is not the only consequence of using Git on binary files.
 However, most of the other problems boil down to whether or not a good diff is possible.
 
-This isn't to say you should _never_ use Git on binary files.
+This isn't to say you should *never* use Git on binary files.
 A rule of thumb is that it's OK if the binary file won't change very often,
 and if it does change, you don't care about merging in small differences between versions.
 
@@ -470,3 +472,5 @@ results/*             # ignore the files in the results directory
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
